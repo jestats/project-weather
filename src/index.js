@@ -27,7 +27,7 @@ form.addEventListener("submit", search);
 
 let apiKey = "2a2eb7984c02aca7e1add2c64025b4ae";
 let units = "metric";
-let city = "Flagstaff, Arizona";
+let city = "San Francisco";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(showTemperature);
