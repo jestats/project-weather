@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 24px;
+  padding: 40px;
+}
+.lower-text {
+  font-size: 19px;
+}
+.location {
+  font-size: 30px;
+}
+.container {
+  background: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(85, 88, 218) 0%,
+    rgb(95, 209, 249) 100.2%
+  );
+  border: 3px solid black;
+
+  border-radius: 12px;
+  padding: 90px;
+}
+.card-body {
+  text-align: center;
+  background-color: #ececec;
+}
+.right {
+  float: right;
+}
