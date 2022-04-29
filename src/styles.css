@@ -29,3 +29,6 @@ h1 {
 .right {
   float: right;
 }
+ul {
+  list-style-type: none;
+}
