@@ -13,6 +13,8 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   console.log(response);
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   let name = response.data.name;
   let cityName = `${name}`;
   let cityTemp = `${temperature}`;
@@ -20,6 +22,8 @@ function showTemperature(response) {
   let currentTemp = document.querySelector(".lower-text");
   city.innerHTML = cityName;
   currentTemp.innerHTML = `${cityTemp} °C`;
+  humidityElement.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let form = document.querySelector("#search-form");
@@ -38,7 +42,8 @@ let time = document.querySelector(".dayTime");
 let date = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
-let year = now.getFullYear();
+
+//let year = now.getFullYear();
 
 let days = [
   "Sunday",
@@ -52,4 +57,4 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-time.innerHTML = `${day} ${date}, ${hours}:${minutes}, ${year}`;
+time.innerHTML = `${day} ${date}, ${hours}:${minutes}`;
