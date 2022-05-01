@@ -20,10 +20,16 @@ function showTemperature(response) {
   let cityTemp = `${temperature}`;
   let city = document.querySelector(".location");
   let currentTemp = document.querySelector(".lower-text");
+  let iconELement = document.querySelector("#icon");
+
   city.innerHTML = cityName;
   currentTemp.innerHTML = `${cityTemp} °C`;
   humidityElement.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
+  iconELement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let form = document.querySelector("#search-form");
