@@ -19,7 +19,7 @@ function showTemperature(response) {
   let cityName = `${name}`;
   let cityTemp = `${temperature}`;
   let city = document.querySelector(".location");
-  let currentTemp = document.querySelector(".lower-text");
+  let currentTemp = document.querySelector(".units");
   let iconELement = document.querySelector("#icon");
 
   city.innerHTML = cityName;
@@ -64,3 +64,13 @@ let days = [
 let day = days[now.getDay()];
 
 time.innerHTML = `${day} ${date}, ${hours}:${minutes}`;
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  alert("Link clicked");
+}
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
