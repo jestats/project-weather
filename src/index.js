@@ -19,11 +19,11 @@ function showTemperature(response) {
   let cityName = `${name}`;
   let cityTemp = `${temperature}`;
   let city = document.querySelector(".location");
-  let currentTemp = document.querySelector(".units");
+  let currentTemp = document.querySelector("#temperature");
   let iconELement = document.querySelector("#icon");
 
   city.innerHTML = cityName;
-  currentTemp.innerHTML = `${cityTemp} °C`;
+  currentTemp.innerHTML = `${cityTemp}`;
   humidityElement.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
   iconELement.setAttribute(
@@ -73,4 +73,4 @@ function displayFahrenheitTemp(event) {
   alert("Link clicked");
 }
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
