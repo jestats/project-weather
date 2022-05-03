@@ -11,10 +11,10 @@ let time = document.querySelector(".dayTime");
 let date = now.getDate();
 let hours = now.getHours();
 if (hours < 10) {
-  hours= `0${hours}`;
+  hours = `0${hours}`;
 }
 let minutes = now.getMinutes();
-if(minutes < 10) {
+if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
@@ -43,8 +43,8 @@ function showTemperature(response) {
   let cityName = `${name}`;
   let cityTemp = `${temperature}`;
   let city = document.querySelector(".location");
-  
-celsiusTemperature = response.data.main.temp;
+
+  celsiusTemperature = response.data.main.temp;
 
   city.innerHTML = cityName;
   currentTemp.innerHTML = `${cityTemp}`;
@@ -66,6 +66,7 @@ function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-text-input");
   searchCity(cityInput.value);
+}
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
@@ -75,14 +76,15 @@ function displayFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   alert("Link clicked");
+}
 
-  function displayCelsiusTemp(event) {
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let temperatureElement = document.querySelectort("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  }
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelectort("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
 let celsiusTemperature = null;
 
@@ -95,4 +97,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
- search("San Francisco");
+searchCity("San Francisco");
