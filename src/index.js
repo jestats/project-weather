@@ -44,10 +44,11 @@ function displayForecast() {
       forecastHTML +
       `<div class="col-2">
             <div class="weather-forecast-date">${day}</div>
-          <img src="http://openweather.org/img/wn/50d@2x.png" alt="" width="42" />
+          <img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" alt="" width="42" />
             <div class="weather-forecast-temperatures">
              <span class="weather-forecast-temperature-max"> 61°</span><span class="weather-forecast-temperature-min> 51°</span>
             </div>
+          </div>
           </div>
         `;
   });

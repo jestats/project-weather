@@ -27,9 +27,19 @@ h1 {
   text-align: center;
   background-color: #ececec;
 }
+.units {
+  position: relative;
+  font-size: 18px;
+}
 .right {
   float: right;
 }
 ul {
   list-style-type: none;
+}
+.weather-forecast {
+  margin-top: 20px;
+}
+.weather-forcast-date {
+  font-size: 13px;
 }
