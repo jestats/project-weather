@@ -11,6 +11,9 @@
       crossorigin="anonymous"
     />
     <title>Project Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
@@ -30,18 +33,20 @@
                   id="city-input"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-10"
+                  class="btn btn-primary"
                 />
               </div>
               <div class="col-2">
-                <input type="submit" value="Current Location" class="btn btn-primary w-10" id="current-location" />
+               <button class="btn btn-success"  id="current-location-button">Current</button>
               </div>
+              
             </div>
           </form>
+          
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -62,7 +67,7 @@
                 <div class="float-left">
                   <strong id="temperature"></strong
                   ><span class="units"
-                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    ><a href="#" id="celsius-link" class="active">°C</a>
                     <a href="#" id="fahrenheit-link">°F</a></span
                   >
                 </div>
@@ -77,11 +82,11 @@
           </div>
           <div class="weather-forecast" id="forecast"></div>
         </div>
-        <small 
-          ><a href="https://github.com/jestats/project-weather" target="_blank"
-            >Open-source code</a
-          >
-          by Jescinta Thompson</small
+        <small><span class="name">Open-source coded by Jescinta Thompson</span><a href="https://www.linkedin.com/in/jescinta/" target="_blank"><img src="https://brandlogos.net/wp-content/uploads/2016/06/linkedin-logo.png" alt="LinkedIn logo" width=27 /></a>
+<a href="https://app.netlify.com/teams/jestats/overview?_ga=2.240393475.1633678712.1652134041-100026946.1650826749" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-64/netlify-3628945-3030170.png" alt="Netlify" width=25 /></a>
+<a href="https://github.com/jestats/project-weather" target="_blank"><img src="data:image/png;base64,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" target="_blank" width=27 /></a>
+          
+          </small
         >
       </div>
       </div>

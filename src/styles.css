@@ -3,7 +3,8 @@ body {
   min-height: 100%;
 }
 body {
-  font-family: arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   background: radial-gradient(
     circle at 10% 20%,
     rgb(0, 107, 141) 0%,
@@ -13,6 +14,9 @@ body {
 
 .over-view {
   margin-bottom: 20px;
+}
+.name {
+  color: #c3cfe2;
 }
 .w-wrap {
   text-align: center;
@@ -32,7 +36,7 @@ body {
   width: 89px;
 }
 .weather-temperature strong {
-  color: blue;
+  color: #2f24c1;
   font-weight: 400;
   display: inline;
   font-family: Arial, Helvetica, sans-serif;
@@ -67,7 +71,7 @@ body {
   font-size: 13px;
 }
 h1 {
-  color: rgb(135, 135, 135);
+  color: #2f24c1;
   display: block;
   font-family: arial, sans-serif;
   font-size: 24px;
@@ -83,7 +87,7 @@ ul {
 }
 li {
   list-style: none;
-  color: rgb(135, 135, 135);
+  color: #081f37;
   font-size: 16px;
   height: 18.889px;
   line-height: 19.2px;
