@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale= 1.0" />
     <meta http-equiv="X-UA Compatible" content="ie=edge" />
@@ -17,11 +16,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-wrapper">
-        <div class="weather-app">
+     <div class="w-wrap">
+       <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-9">
+              <div class="col-6">
                 <input
                   type="search"
                   placeholder="Search for a city"
@@ -35,8 +34,11 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-100"
+                  class="btn btn-primary w-10"
                 />
+              </div>
+              <div class="col-2">
+                <input type="submit" value="Current Location" class="btn btn-primary w-10" id="current-location" />
               </div>
             </div>
           </form>
@@ -51,7 +53,7 @@
             <div class="col-9">
               <div class="clearfix weather-temperature">
                 <img
-                  src="cloud_sun_sunny_weather_icon.png"
+                  src="sun_behind_small-cloud.png"
                   alt="sunny"
                   id="icon"
                   class="float-left"
@@ -60,7 +62,7 @@
                 <div class="float-left">
                   <strong id="temperature"></strong
                   ><span class="units"
-                    ><a href="#" id="celsius-link" clas="active">°C</a> |
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
                     <a href="#" id="fahrenheit-link">°F</a></span
                   >
                 </div>
@@ -75,12 +77,13 @@
           </div>
           <div class="weather-forecast" id="forecast"></div>
         </div>
-        <small
+        <small 
           ><a href="https://github.com/jestats/project-weather" target="_blank"
             >Open-source code</a
           >
           by Jescinta Thompson</small
         >
+      </div>
       </div>
     </div>
     <script src="src/index.js"></script>

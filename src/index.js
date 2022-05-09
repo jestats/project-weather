@@ -104,9 +104,18 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function displayCurrentLocation(position) {
+  navigator.geolocation.getForecast(displayCurrentLocation);
+  let apiKey = "2a2eb7984c02aca7e1add2c64025b4ae";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+  axios.get(url).then(displayTemperature);
+}
+
 function search(city) {
   let apiKey = "2a2eb7984c02aca7e1add2c64025b4ae";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -133,6 +142,9 @@ function displaycelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let searchPosition = document.querySelector("#current-location");
+searchPosition.addEventListener("click", displayCurrentLocation);
 
 let celsiusTemperature = null;
 
